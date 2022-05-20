@@ -21,10 +21,9 @@ import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import trainings.jetpack.comppose.fundamentals.R.color.purple_700
+import trainings.jetpack.comppose.fundamentals.R.string.jetpack_compose
 import trainings.jetpack.comppose.fundamentals.ui.theme.TrainingJetPackCompposeFundamentalsTheme
 
-
-const val jetpack_compose = "jetpack compose"
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting(jetpack_compose)
+                    Greeting(stringResource(id = jetpack_compose))
                 }
             }
         }
@@ -58,6 +57,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     TrainingJetPackCompposeFundamentalsTheme {
-        Greeting(jetpack_compose)
+        Greeting(stringResource(id = jetpack_compose))
     }
 }
