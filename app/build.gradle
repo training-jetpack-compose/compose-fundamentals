@@ -8,7 +8,7 @@ android {
   compileSdkVersion rootProject.ext.compileSdkVersion
 
   defaultConfig {
-    applicationId "com.raywenderlich.android.jetpackcompose"
+    applicationId "trainings.mobile.jetpackcompose"
     minSdkVersion rootProject.ext.minSdkVersion
     targetSdkVersion rootProject.ext.targetSdkVersion
     versionCode 1
@@ -35,7 +35,7 @@ android {
     kotlinCompilerVersion kotlin_version
     kotlinCompilerExtensionVersion compose_version
   }
-  namespace 'com.raywenderlich.android.jetpackcompose'
+  namespace 'trainings.mobile.jetpackcompose'
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
