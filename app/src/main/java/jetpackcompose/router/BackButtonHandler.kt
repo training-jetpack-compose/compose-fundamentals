@@ -2,6 +2,7 @@ package jetpackcompose.router
 
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.OnBackPressedDispatcherOwner
 import androidx.compose.runtime.*
 import androidx.compose.ui.platform.LocalLifecycleOwner
@@ -19,7 +20,7 @@ internal fun Handler(
     enabled: Boolean = true,
     onBackPressed: () -> Unit
 ) {
-    val dispatcher = (LocalBackPressedDispatcher.current ?: return).onBackPressedDispatcher
+    val dispatcher: OnBackPressedDispatcher = (LocalBackPressedDispatcher.current ?: return).onBackPressedDispatcher
     val handler = remember { ComposableBackHandler(enabled) }
     DisposableEffect(dispatcher) {
         dispatcher.addCallback(handler)
