@@ -1,0 +1,5 @@
+Crossfade
+https://foso.github.io/Jetpack-Compose-Playground/animation/crossfade/
+https://medium.com/mobile-app-development-publication/learn-jetpack-compose-crossfade-animation-c400521e0351
+https://developer.android.com/jetpack/compose/animation#crossfade
+https://www.raywenderlich.com/21451892-jetpack-compose-animations/lessons/5
