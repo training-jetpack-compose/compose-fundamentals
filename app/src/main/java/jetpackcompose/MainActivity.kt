@@ -1,9 +1,9 @@
-package com.raywenderlich.android.jetpackcompose
+package jetpackcompose
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import com.raywenderlich.android.jetpackcompose.app.JetFundamentalsApp
+import jetpackcompose.app.JetFundamentalsApp
 
 class MainActivity : AppCompatActivity() {
 

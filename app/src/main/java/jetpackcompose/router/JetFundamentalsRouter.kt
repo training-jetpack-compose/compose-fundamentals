@@ -1,8 +1,8 @@
-package com.raywenderlich.android.jetpackcompose.router
+package jetpackcompose.router
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
-import com.raywenderlich.android.jetpackcompose.router.Screen.Navigation
+import jetpackcompose.router.Screen.Navigation
 
 /**
  * Class defining the screens we have in the app.

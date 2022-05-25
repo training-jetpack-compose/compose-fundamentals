@@ -1,4 +1,4 @@
-package com.raywenderlich.android.jetpackcompose.screens
+package jetpackcompose.screens
 
 import androidx.compose.foundation.layout.Arrangement.Center
 import androidx.compose.foundation.layout.Column
@@ -17,11 +17,11 @@ import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.raywenderlich.android.jetpackcompose.R.color.colorPrimary
-import com.raywenderlich.android.jetpackcompose.R.string.*
-import com.raywenderlich.android.jetpackcompose.router.JetFundamentalsRouter.navigateTo
-import com.raywenderlich.android.jetpackcompose.router.Screen
-import com.raywenderlich.android.jetpackcompose.router.Screen.*
+import jetpackcompose.R.color.colorPrimary
+import jetpackcompose.R.string.*
+import jetpackcompose.router.JetFundamentalsRouter.navigateTo
+import jetpackcompose.router.Screen
+import jetpackcompose.router.Screen.*
 
 @Composable
 fun NavigationScreen() {
