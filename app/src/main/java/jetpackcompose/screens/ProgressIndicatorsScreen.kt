@@ -1,25 +1,25 @@
 package jetpackcompose.screens
 
-import androidx.compose.foundation.layout.Arrangement.Center
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment.Companion.CenterHorizontally
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import jetpackcompose.router.BackButtonHandler
 import jetpackcompose.router.JetFundamentalsRouter.navigateTo
-import jetpackcompose.router.Screen.Navigation
+import jetpackcompose.router.Screen
 
 @Composable
 fun ProgressIndicatorScreen() {
 
     Column(
         modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = CenterHorizontally,
-        verticalArrangement = Center
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
         //TODO add your code here
     }
 
-    BackButtonHandler { navigateTo(Navigation) }
+    BackButtonHandler { navigateTo(Screen.Navigation) }
 }

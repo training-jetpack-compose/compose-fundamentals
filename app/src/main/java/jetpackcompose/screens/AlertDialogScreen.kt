@@ -3,13 +3,13 @@ package jetpackcompose.screens
 import androidx.compose.runtime.Composable
 import jetpackcompose.router.BackButtonHandler
 import jetpackcompose.router.JetFundamentalsRouter.navigateTo
-import jetpackcompose.router.Screen.Navigation
+import jetpackcompose.router.Screen
 
 
 @Composable
 fun AlertDialogScreen() {
     MyAlertDialog()
-    BackButtonHandler { navigateTo(Navigation) }
+    BackButtonHandler { navigateTo(Screen.Navigation) }
 }
 
 @Composable
