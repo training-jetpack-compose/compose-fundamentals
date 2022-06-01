@@ -2,7 +2,16 @@ package jetpackcompose.router
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
+import jetpackcompose.R
 import jetpackcompose.router.Screen.Navigation
+
+val gallery: Array<Pair<Int, Screen>> = arrayOf(
+    Pair(R.string.text, Screen.Text),
+    Pair(R.string.text_field, Screen.TextField),
+    Pair(R.string.buttons, Screen.Buttons),
+    Pair(R.string.progress_indicators, Screen.ProgressIndicator),
+    Pair(R.string.alert_dialog, Screen.AlertDialog),
+)
 
 /**
  * Class defining the screens we have in the app.
@@ -17,6 +26,7 @@ sealed class Screen {
     object ProgressIndicator : Screen()
     object AlertDialog : Screen()
 }
+
 
 object JetFundamentalsRouter {
     var currentScreen: MutableState<Screen> = mutableStateOf(Navigation)
