@@ -16,11 +16,11 @@ import androidx.compose.ui.unit.dp
 import jetpackcompose.R
 import jetpackcompose.router.JetFundamentalsRouter.navigateTo
 import jetpackcompose.router.Screen
-import jetpackcompose.router.gallery
+import jetpackcompose.router.JetFundamentalsRouter.screens
 
 
 @Composable
-fun NavigationScreen() {
+fun NavigationScreen(screens:Array<Pair<Int,Screen>>) {
     Surface(
         color = Color.White,
         modifier = Modifier.fillMaxSize()
@@ -28,46 +28,9 @@ fun NavigationScreen() {
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            gallery.map { NavigationButton(stringResource(it.first), it.second) }
-        }
+        ) { screens.map { NavigationButton(stringResource(it.first), it.second) } }
     }
 }
-
-
-//@Composable
-//fun NavigationScreen() {
-//    Surface(
-//        color = Color.White,
-//        modifier = Modifier.fillMaxSize()
-//    ) {
-//        Column(
-//            verticalArrangement = Arrangement.Center,
-//            horizontalAlignment = Alignment.CenterHorizontally
-//        ) {
-//            NavigationButton(
-//                text = stringResource(id = R.string.text),
-//                screen = Screen.Text
-//            )
-//            NavigationButton(
-//                text = stringResource(id = R.string.text_field),
-//                Screen.TextField
-//            )
-//            NavigationButton(
-//                text = stringResource(id = R.string.buttons),
-//                Screen.Buttons
-//            )
-//            NavigationButton(
-//                text = stringResource(id = R.string.progress_indicators),
-//                screen = Screen.ProgressIndicator
-//            )
-//            NavigationButton(
-//                text = stringResource(id = R.string.alert_dialog),
-//                screen = Screen.AlertDialog
-//            )
-//        }
-//    }
-//}
 
 @Composable
 fun NavigationButton(text: String, screen: Screen) {

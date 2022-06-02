@@ -13,7 +13,7 @@ fun JetFundamentalsApp() {
     Surface(color = MaterialTheme.colors.background) {
         Crossfade(targetState = JetFundamentalsRouter.currentScreen) { screenState ->
             when (screenState.value) {
-                is Screen.Navigation -> NavigationScreen()
+                is Screen.Navigation -> NavigationScreen(JetFundamentalsRouter.screens)
                 is Screen.Text -> TextScreen()
                 is Screen.TextField -> TextFieldScreen()
                 is Screen.Buttons -> ExploreButtonsScreen()
