@@ -16,11 +16,11 @@ import androidx.compose.ui.unit.dp
 import jetpackcompose.R
 import jetpackcompose.router.JetFundamentalsRouter.navigateTo
 import jetpackcompose.router.Screen
-import jetpackcompose.router.JetFundamentalsRouter.screens
+import jetpackcompose.router.JetFundamentalsRouter
 
 
 @Composable
-fun NavigationScreen(screens:Array<Pair<Int,Screen>>) {
+fun NavigationScreen() {
     Surface(
         color = Color.White,
         modifier = Modifier.fillMaxSize()
@@ -28,7 +28,14 @@ fun NavigationScreen(screens:Array<Pair<Int,Screen>>) {
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
-        ) { screens.map { NavigationButton(stringResource(it.first), it.second) } }
+        ) {
+            JetFundamentalsRouter.screens.map {
+                NavigationButton(
+                    stringResource(it.first),
+                    it.second
+                )
+            }
+        }
     }
 }
 
