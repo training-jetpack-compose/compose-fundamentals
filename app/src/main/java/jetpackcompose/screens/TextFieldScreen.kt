@@ -20,7 +20,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import jetpackcompose.R
 import jetpackcompose.router.BackButtonHandler
-import jetpackcompose.router.JetFundamentalsRouter.navigateTo
+import jetpackcompose.router.Router.navigateTo
 import jetpackcompose.router.Screen
 
 @Composable

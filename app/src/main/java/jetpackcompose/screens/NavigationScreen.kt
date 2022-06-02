@@ -14,9 +14,9 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import jetpackcompose.R
-import jetpackcompose.router.JetFundamentalsRouter.navigateTo
+import jetpackcompose.router.Router.navigateTo
 import jetpackcompose.router.Screen
-import jetpackcompose.router.JetFundamentalsRouter
+import jetpackcompose.router.Router
 
 
 @Composable
@@ -29,7 +29,7 @@ fun NavigationScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            JetFundamentalsRouter.screens.map {
+            Router.screens.map {
                 NavigationButton(
                     stringResource(it.first),
                     it.second

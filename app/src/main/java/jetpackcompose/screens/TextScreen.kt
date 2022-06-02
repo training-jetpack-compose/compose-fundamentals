@@ -15,7 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import jetpackcompose.R
 import jetpackcompose.router.BackButtonHandler
-import jetpackcompose.router.JetFundamentalsRouter.navigateTo
+import jetpackcompose.router.Router.navigateTo
 import jetpackcompose.router.Screen
 
 @Composable
