@@ -1,4 +1,4 @@
-package com.raywenderlich.android.jetpackcompose
+package jetpackcompose
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
 
     setContent {
-      JetFundamentalsApp()
+        JetFundamentalsApp()
     }
   }
 }

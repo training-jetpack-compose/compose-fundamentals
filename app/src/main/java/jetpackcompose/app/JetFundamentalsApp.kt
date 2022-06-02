@@ -1,4 +1,4 @@
-package com.raywenderlich.android.jetpackcompose.app
+package jetpackcompose.app
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.material.MaterialTheme

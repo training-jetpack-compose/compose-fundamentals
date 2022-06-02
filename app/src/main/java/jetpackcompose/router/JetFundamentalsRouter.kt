@@ -1,4 +1,4 @@
-package com.raywenderlich.android.jetpackcompose.router
+package jetpackcompose.router
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf

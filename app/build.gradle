@@ -5,10 +5,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+  namespace 'jetpackcompose'
   compileSdkVersion rootProject.ext.compileSdkVersion
 
   defaultConfig {
-    applicationId "com.raywenderlich.android.jetpackcompose"
+    applicationId "jetpackcompose.fundamentals"
     minSdkVersion rootProject.ext.minSdkVersion
     targetSdkVersion rootProject.ext.targetSdkVersion
     versionCode 1
@@ -35,7 +36,6 @@ android {
     kotlinCompilerVersion kotlin_version
     kotlinCompilerExtensionVersion compose_version
   }
-  namespace 'com.raywenderlich.android.jetpackcompose'
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {

@@ -1,4 +1,4 @@
-package com.raywenderlich.android.jetpackcompose
+package jetpackcompose
 
 import org.junit.Test
 

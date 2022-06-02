@@ -1,4 +1,4 @@
-package com.raywenderlich.android.jetpackcompose.router
+package jetpackcompose.router
 
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback

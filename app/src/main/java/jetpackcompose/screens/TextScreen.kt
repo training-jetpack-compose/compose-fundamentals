@@ -1,4 +1,4 @@
-package com.raywenderlich.android.jetpackcompose.screens
+package jetpackcompose.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,10 +13,10 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import com.raywenderlich.android.jetpackcompose.R
-import com.raywenderlich.android.jetpackcompose.router.BackButtonHandler
-import com.raywenderlich.android.jetpackcompose.router.JetFundamentalsRouter
-import com.raywenderlich.android.jetpackcompose.router.Screen
+import jetpackcompose.R
+import jetpackcompose.router.BackButtonHandler
+import jetpackcompose.router.JetFundamentalsRouter
+import jetpackcompose.router.Screen
 
 @Composable
 fun TextScreen() {

@@ -1,4 +1,4 @@
-package com.raywenderlich.android.jetpackcompose.screens
+package jetpackcompose.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -13,9 +13,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.raywenderlich.android.jetpackcompose.R
-import com.raywenderlich.android.jetpackcompose.router.JetFundamentalsRouter
-import com.raywenderlich.android.jetpackcompose.router.Screen
+import jetpackcompose.R
+import jetpackcompose.router.JetFundamentalsRouter
+import jetpackcompose.router.Screen
 
 @Composable
 fun NavigationScreen() {
