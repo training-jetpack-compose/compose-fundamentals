@@ -1,11 +1,21 @@
 package jetpackcompose.screens
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import jetpackcompose.R
 import jetpackcompose.router.BackButtonHandler
 import jetpackcompose.router.JetFundamentalsRouter.navigateTo
 import jetpackcompose.router.Screen
@@ -17,24 +27,39 @@ fun ExploreButtonsScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        MyButton()
-        MyRadioGroup()
-        MyFloatingActionButton()
+        DemoButton()
+        DemoRadioGroup()
+        DemoFloatingActionButton()
         BackButtonHandler { navigateTo(Screen.Navigation) }
     }
 }
 
+@Preview
 @Composable
-fun MyButton() {
+fun DemoButton() {
+    Button(
+        onClick = {},
+        colors = ButtonDefaults.buttonColors(backgroundColor =
+        colorResource(id = R.color.colorPrimary)),
+        border = BorderStroke(
+            1.dp,
+            color = colorResource(id = R.color.colorPrimaryDark)
+        )
+    ) {
+        Text(
+            text = stringResource(id = R.string.button_text),
+            color = Color.White
+        )
+    }
+
+}
+
+@Composable
+fun DemoRadioGroup() {
     //TODO add your code here
 }
 
 @Composable
-fun MyRadioGroup() {
-    //TODO add your code here
-}
-
-@Composable
-fun MyFloatingActionButton() {
+fun DemoFloatingActionButton() {
     //TODO add your code here
 }
