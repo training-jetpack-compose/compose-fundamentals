@@ -24,13 +24,13 @@ fun TextScreen() {
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
-    ) { MyText() }
+    ) { DemoText() }
     BackButtonHandler { navigateTo(Screen.Navigation) }
 }
 
 @Preview
 @Composable
-fun MyText() {
+fun DemoText() {
     Text(text = stringResource(id = R.string.jetpack_compose),
         fontStyle = FontStyle.Italic,
         color = colorResource(id = R.color.colorPrimary),
