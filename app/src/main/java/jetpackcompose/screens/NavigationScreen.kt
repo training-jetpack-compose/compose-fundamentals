@@ -19,7 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import jetpackcompose.R.color.colorPrimary
 import jetpackcompose.R.string.*
-import jetpackcompose.router.JetFundamentalsRouter.navigateTo
+import jetpackcompose.router.FundamentalsRouter.navigateTo
 import jetpackcompose.router.Screen
 import jetpackcompose.router.Screen.*
 

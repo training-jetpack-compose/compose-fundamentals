@@ -4,11 +4,6 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import jetpackcompose.router.Screen.Navigation
 
-/**
- * Class defining the screens we have in the app.
- *
- * These objects should match files we have in the screens package
- */
 sealed class Screen {
     object Navigation : Screen()
     object Text : Screen()
@@ -18,7 +13,7 @@ sealed class Screen {
     object AlertDialog : Screen()
 }
 
-object JetFundamentalsRouter {
+object FundamentalsRouter {
     var currentScreen: MutableState<Screen> = mutableStateOf(Navigation)
 
     fun navigateTo(destination: Screen) {

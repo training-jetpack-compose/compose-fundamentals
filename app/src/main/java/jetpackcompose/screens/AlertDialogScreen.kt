@@ -2,7 +2,7 @@ package jetpackcompose.screens
 
 import androidx.compose.runtime.Composable
 import jetpackcompose.router.BackButtonHandler
-import jetpackcompose.router.JetFundamentalsRouter.navigateTo
+import jetpackcompose.router.FundamentalsRouter.navigateTo
 import jetpackcompose.router.Screen.Navigation
 
 

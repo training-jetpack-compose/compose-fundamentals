@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import jetpackcompose.router.BackButtonHandler
-import jetpackcompose.router.JetFundamentalsRouter.navigateTo
+import jetpackcompose.router.FundamentalsRouter.navigateTo
 import jetpackcompose.router.Screen.Navigation
 
 @Composable
