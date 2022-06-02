@@ -12,25 +12,21 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import jetpackcompose.R
 import jetpackcompose.router.BackButtonHandler
-import jetpackcompose.router.JetFundamentalsRouter
+import jetpackcompose.router.JetFundamentalsRouter.navigateTo
 import jetpackcompose.router.Screen
 
 @Composable
 fun ProgressIndicatorScreen() {
-
-  Column(
-    modifier = Modifier.fillMaxSize(),
-    horizontalAlignment = Alignment.CenterHorizontally,
-    verticalArrangement = Arrangement.Center
-  ) {
-    CircularProgressIndicator(
-      color = colorResource(id = R.color.colorPrimary),
-      strokeWidth = 5.dp
-    )
-    LinearProgressIndicator(progress = 0.5f)
-  }
-
-  BackButtonHandler {
-    JetFundamentalsRouter.navigateTo(Screen.Navigation)
-  }
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        CircularProgressIndicator(
+            color = colorResource(id = R.color.colorPrimary),
+            strokeWidth = 5.dp
+        )
+        LinearProgressIndicator(progress = 0.5f)
+    }
+    BackButtonHandler { navigateTo(Screen.Navigation) }
 }

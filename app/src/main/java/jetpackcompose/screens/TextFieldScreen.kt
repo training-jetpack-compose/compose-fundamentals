@@ -17,43 +17,64 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
 import jetpackcompose.R
 import jetpackcompose.router.BackButtonHandler
-import jetpackcompose.router.JetFundamentalsRouter
+import jetpackcompose.router.JetFundamentalsRouter.navigateTo
 import jetpackcompose.router.Screen
 
 @Composable
 fun TextFieldScreen() {
-  Column(
-      modifier = Modifier.fillMaxSize(),
-      horizontalAlignment = Alignment.CenterHorizontally,
-      verticalArrangement = Arrangement.Center
-  ) {
-    MyTextField()
-  }
-
-  BackButtonHandler {
-    JetFundamentalsRouter.navigateTo(Screen.Navigation)
-  }
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        DemoTextField()
+        DemoEmailTextField()
+    }
+    BackButtonHandler { navigateTo(Screen.Navigation) }
 }
 
+@Preview
 @Composable
-fun MyTextField() {
-  val textValue = remember { mutableStateOf("") }
+fun DemoTextField() {
+    val textValue = remember { mutableStateOf("") }
+    TextField(
+        value = textValue.value,
+        onValueChange = {
+            textValue.value = it
+        },
+        label = {}
+    )
+}
 
-  val primaryColor = colorResource(id = R.color.colorPrimary)
-
-  OutlinedTextField(
-    label = { Text(text = stringResource(id = R.string.email)) },
-    colors = TextFieldDefaults.outlinedTextFieldColors(
-      focusedBorderColor = primaryColor,
-      focusedLabelColor = primaryColor,
-      cursorColor = primaryColor
-    ),
-    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Email),
-    value = textValue.value,
-    onValueChange = {
-      textValue.value = it
-    },
-  )
+@Preview
+@Composable
+fun DemoEmailTextField() {
+    val textValue = remember { mutableStateOf("") }
+    val primaryColor = colorResource(id = R.color.colorPrimary)
+    OutlinedTextField(
+        label = {
+            Text(
+                text = stringResource(
+                    id =
+                    R.string.email
+                )
+            )
+        },
+        colors = TextFieldDefaults.outlinedTextFieldColors(
+            focusedBorderColor = primaryColor,
+            focusedLabelColor = primaryColor,
+            cursorColor = primaryColor
+        ),
+        keyboardOptions = KeyboardOptions.Default.copy(
+            keyboardType
+            = KeyboardType.Email
+        ),
+        value = textValue.value,
+        onValueChange = {
+            textValue.value = it
+        },
+    )
 }

@@ -15,31 +15,26 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import jetpackcompose.R
 import jetpackcompose.router.BackButtonHandler
-import jetpackcompose.router.JetFundamentalsRouter
+import jetpackcompose.router.JetFundamentalsRouter.navigateTo
 import jetpackcompose.router.Screen
 
 @Composable
 fun TextScreen() {
-  Column(
-    modifier = Modifier.fillMaxSize(),
-    horizontalAlignment = Alignment.CenterHorizontally,
-    verticalArrangement = Arrangement.Center
-  ) {
-    MyText()
-  }
-
-  BackButtonHandler {
-    JetFundamentalsRouter.navigateTo(Screen.Navigation)
-  }
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) { DemoText() }
+    BackButtonHandler { navigateTo(Screen.Navigation) }
 }
 
-@Composable
 @Preview
-fun MyText() {
-  Text(text = stringResource(id = R.string.jetpack_compose),
-    fontStyle = FontStyle.Italic,
-    color = colorResource(id = R.color.colorPrimary),
-    fontSize = 30.sp,
-    fontWeight = FontWeight.Bold
-  )
+@Composable
+fun DemoText() {
+    Text(text = stringResource(id = R.string.jetpack_compose),
+        fontStyle = FontStyle.Italic,
+        color = colorResource(id = R.color.colorPrimary),
+        fontSize = 30.sp,
+        fontWeight = FontWeight.Bold
+    )
 }

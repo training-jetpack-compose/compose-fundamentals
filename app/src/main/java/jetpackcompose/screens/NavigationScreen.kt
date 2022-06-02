@@ -3,7 +3,7 @@ package jetpackcompose.screens
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.ButtonDefaults.buttonColors
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -14,42 +14,48 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import jetpackcompose.R
-import jetpackcompose.router.JetFundamentalsRouter
+import jetpackcompose.router.JetFundamentalsRouter.navigateTo
 import jetpackcompose.router.Screen
+import jetpackcompose.router.JetFundamentalsRouter
+
 
 @Composable
 fun NavigationScreen() {
-  Surface(
-      color = Color.White,
-      modifier = Modifier.fillMaxSize()
-  ) {
-    Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+    Surface(
+        color = Color.White,
+        modifier = Modifier.fillMaxSize()
     ) {
-
-      NavigationButton(stringResource(id = R.string.text), Screen.Text)
-      NavigationButton(stringResource(id = R.string.text_field), Screen.TextField)
-      NavigationButton(stringResource(id = R.string.buttons), Screen.Buttons)
-      NavigationButton(stringResource(id = R.string.progress_indicators), Screen.ProgressIndicator)
-      NavigationButton(stringResource(id = R.string.alert_dialog), Screen.AlertDialog)
+        Column(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            JetFundamentalsRouter.screens.map {
+                NavigationButton(
+                    stringResource(it.first),
+                    it.second
+                )
+            }
+        }
     }
-  }
 }
 
 @Composable
 fun NavigationButton(text: String, screen: Screen) {
-  Button(
-      modifier = Modifier
-          .fillMaxWidth()
-          .padding(start = 16.dp, end = 16.dp, top = 16.dp),
-      shape = RoundedCornerShape(4.dp),
-      colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.colorPrimary)),
-      onClick = { JetFundamentalsRouter.navigateTo(screen) }
-  ) {
-    Text(
-        text = text,
-        color = Color.White
-    )
-  }
+    Button(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(
+                start = 16.dp,
+                end = 16.dp,
+                top = 16.dp
+            ),
+        shape = RoundedCornerShape(4.dp),
+        colors = buttonColors(backgroundColor = colorResource(id = R.color.colorPrimary)),
+        onClick = { navigateTo(screen) }
+    ) {
+        Text(
+            text = text,
+            color = Color.White
+        )
+    }
 }

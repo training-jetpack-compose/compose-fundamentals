@@ -15,78 +15,81 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import jetpackcompose.R
 import jetpackcompose.router.BackButtonHandler
-import jetpackcompose.router.JetFundamentalsRouter
+import jetpackcompose.router.JetFundamentalsRouter.navigateTo
 import jetpackcompose.router.Screen
 
 @Composable
 fun ExploreButtonsScreen() {
-  Column(
-    modifier = Modifier.fillMaxSize(),
-    horizontalAlignment = Alignment.CenterHorizontally,
-    verticalArrangement = Arrangement.Center
-  ) {
-
-    MyButton()
-    MyRadioGroup()
-    MyFloatingActionButton()
-
-    BackButtonHandler {
-      JetFundamentalsRouter.navigateTo(Screen.Navigation)
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        DemoButton()
+        DemoRadioGroup()
+        DemoFloatingActionButton()
     }
-  }
+    BackButtonHandler { navigateTo(Screen.Navigation) }
 }
 
+@Preview
 @Composable
-fun MyButton() {
-  Button(
-    onClick = {},
-    colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.colorPrimary)),
-    border = BorderStroke(
-      1.dp,
-      color = colorResource(id = R.color.colorPrimaryDark)
+fun DemoButton() {
+    Button(
+        onClick = {},
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor =
+            colorResource(id = R.color.colorPrimary)
+        ),
+        border = BorderStroke(
+            1.dp,
+            color = colorResource(id = R.color.colorPrimaryDark)
+        )
+    ) {
+        Text(
+            text = stringResource(id = R.string.button_text),
+            color = Color.White
+        )
+    }
+
+}
+
+@Preview
+@Composable
+fun DemoRadioGroup() {
+    val radioButtons = listOf(0, 1, 2)
+    val selectedButton = remember { mutableStateOf(radioButtons.first()) }
+    Column {
+        radioButtons.forEach { index ->
+            val isSelected = index == selectedButton.value
+            val colors = RadioButtonDefaults.colors(
+                selectedColor = colorResource(id = R.color.colorPrimary),
+                unselectedColor = colorResource(id = R.color.colorPrimaryDark),
+                disabledColor = Color.LightGray
+            )
+            RadioButton(
+                colors = colors,
+                selected = isSelected,
+                onClick = { selectedButton.value = index }
+            )
+        }
+    }
+}
+
+@Preview
+@Composable
+fun DemoFloatingActionButton() {
+    FloatingActionButton(
+        onClick = {},
+        backgroundColor = colorResource(id =
+        R.color.colorPrimary),
+        contentColor = Color.White,
+        content = {
+            Icon(Icons.Filled.Favorite, contentDescription = "Test FAB")
+        }
     )
-  ) {
-    Text(
-      text = stringResource(id = R.string.button_text),
-      color = Color.White
-    )
-  }
-}
-@Composable
-fun MyRadioGroup() {
-  val radioButtons = listOf(0, 1, 2) // 1
-
-  val selectedButton = remember { mutableStateOf(radioButtons.first()) } // 2
-
-  Column {
-    radioButtons.forEach { index -> // 3
-      val isSelected = index == selectedButton.value
-      val colors = RadioButtonDefaults.colors( // 4
-        selectedColor = colorResource(id = R.color.colorPrimary),
-        unselectedColor = colorResource(id = R.color.colorPrimaryDark),
-        disabledColor = Color.LightGray
-      )
-
-      RadioButton( // 5
-        colors = colors,
-        selected = isSelected,
-        onClick = { selectedButton.value = index } // 6
-      )
-    }
-  }
-}
-
-@Composable
-fun MyFloatingActionButton() {
-  FloatingActionButton(
-    onClick = {},
-    backgroundColor = colorResource(id = R.color.colorPrimary),
-    contentColor = Color.White,
-    content = {
-      Icon(Icons.Filled.Favorite, contentDescription = "Test FAB")
-    }
-  )
 }
