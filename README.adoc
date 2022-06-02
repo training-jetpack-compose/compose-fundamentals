@@ -1,1 +1,7 @@
 = compose-fundamentals
+
+branch :
+
+* starter
+* final
+* more
