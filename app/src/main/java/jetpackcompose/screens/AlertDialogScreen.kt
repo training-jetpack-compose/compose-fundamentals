@@ -8,11 +8,11 @@ import jetpackcompose.router.Screen.Navigation
 
 @Composable
 fun AlertDialogScreen() {
-    MyAlertDialog()
+    DemoAlertDialog()
     BackButtonHandler { navigateTo(Navigation) }
 }
 
 @Composable
-fun MyAlertDialog() {
+fun DemoAlertDialog() {
     //TODO add your code here
 }

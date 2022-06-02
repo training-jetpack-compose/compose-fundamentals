@@ -17,24 +17,24 @@ fun ExploreButtonsScreen() {
         horizontalAlignment = CenterHorizontally,
         verticalArrangement = Center
     ) {
-        MyButton()
-        MyRadioGroup()
-        MyFloatingActionButton()
+        DemoButton()
+        DemoRadioGroup()
+        DemoFloatingActionButton()
         BackButtonHandler { navigateTo(Navigation) }
     }
 }
 
 @Composable
-fun MyButton() {
+fun DemoButton() {
     //TODO add your code here
 }
 
 @Composable
-fun MyRadioGroup() {
+fun DemoRadioGroup() {
     //TODO add your code here
 }
 
 @Composable
-fun MyFloatingActionButton() {
+fun DemoFloatingActionButton() {
     //TODO add your code here
 }

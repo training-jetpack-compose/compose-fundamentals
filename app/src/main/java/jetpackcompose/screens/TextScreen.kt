@@ -16,12 +16,12 @@ fun TextScreen() {
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = CenterHorizontally,
         verticalArrangement = Center
-    ) { MyText() }
+    ) { DemoText() }
 
     BackButtonHandler { navigateTo(Navigation) }
 }
 
 @Composable
-fun MyText() {
+fun DemoText() {
     //TODO add your code here
 }

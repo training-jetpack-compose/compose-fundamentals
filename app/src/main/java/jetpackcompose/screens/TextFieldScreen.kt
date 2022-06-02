@@ -17,12 +17,12 @@ fun TextFieldScreen() {
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = CenterHorizontally,
         verticalArrangement = Center
-    ) { MyTextField() }
+    ) { DemoTextField() }
 
     BackButtonHandler { navigateTo(Navigation) }
 }
 
 @Composable
-fun MyTextField() {
+fun DemoTextField() {
     //TODO add your code here
 }
